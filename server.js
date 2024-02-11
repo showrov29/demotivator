@@ -6,9 +6,10 @@ app.set("view engine", "ejs");
 
 app.get("/", async (req, res) => {
 	const insult = await run(req.query.text);
-	console.log(req.query);
-	console.log("🚀 ~ app.get ~ insult:", insult);
-	res.render("index", { insult });
+	res.send(insult);
+	// console.log(req.query);
+	// console.log("🚀 ~ app.get ~ insult:", insult);
+	// res.render("index", { insult });
 });
 
 app.listen(PORT, () => {
