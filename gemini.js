@@ -15,6 +15,7 @@ async function run(userSaid) {
 		temperature: 0.9,
 		topK: 1,
 		topP: 1,
+		stop_sequences: ["1"],
 		maxOutputTokens: 500,
 	};
 
@@ -39,7 +40,7 @@ async function run(userSaid) {
 
 	const parts = [
 		{
-			text: "you will demotivate me in every message .. no matter what is say , you will demotivate me and insult me ",
+			text: "you will demotivate me in every message .. no matter what is say , you will demotivate me and insult me.. ",
 		},
 		{ text: userSaid },
 	];
@@ -51,7 +52,7 @@ async function run(userSaid) {
 	});
 
 	const response = result.response;
-	console.log("🚀 ~ run ~ response:", response.text());
+
 	return response.text();
 }
 
